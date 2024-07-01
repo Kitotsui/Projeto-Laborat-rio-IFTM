@@ -3,6 +3,7 @@ import { GluestackUIProvider, Text, Box, Button, ButtonText, ChevronDownIcon, Ic
 import { config } from '@gluestack-ui/config';
 import { Select, SelectTrigger, SelectInput, SelectPortal, SelectBackdrop, SelectContent, SelectDragIndicatorWrapper, SelectDragIndicator, SelectItem } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity, Platform, ScrollView } from 'react-native';
 
 const ComiteForm = () => {
   const [evaluationForm, setEvaluationForm] = useState('');
@@ -10,7 +11,8 @@ const ComiteForm = () => {
 
   return (
     <GluestackUIProvider config={config}>
-      <Box p="$4">
+      <ScrollView>
+      <Box p="$4" backgroundColor="$white">
         <Text mt="$4">Nome do Membro</Text>
         <Input variant="outline" size="md">
           <InputField placeholder='Digite o nome do membro' />
@@ -49,6 +51,7 @@ const ComiteForm = () => {
           <ButtonText>Finalizar</ButtonText>
         </Button>
       </Box>
+      </ScrollView>
     </GluestackUIProvider>
   );
 };

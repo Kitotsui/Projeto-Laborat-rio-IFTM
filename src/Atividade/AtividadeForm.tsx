@@ -5,7 +5,7 @@ import { Select, SelectTrigger, SelectInput, SelectPortal,
     SelectBackdrop, SelectContent, SelectDragIndicatorWrapper, SelectDragIndicator, SelectItem, 
     FormControl, FormControlLabel, FormControlLabelText, TextareaInput, Textarea, FormControlHelperText, FormControlHelper} from '@gluestack-ui/themed';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { TouchableOpacity, Platform } from 'react-native';
+import { TouchableOpacity, Platform, ScrollView } from 'react-native';
 import { format } from 'date-fns';
 import { useNavigation } from '@react-navigation/native';
 
@@ -30,7 +30,8 @@ const AtividadeForm = () => {
 
   return (
     <GluestackUIProvider config={config}>
-      <Box p="$4">
+      <ScrollView>
+      <Box p="$4" backgroundColor="$white">
         <Text mt="$4">Título</Text>
         <Input variant="outline" size="md">
           <InputField placeholder='Digite o título da atividade' />
@@ -130,6 +131,7 @@ const AtividadeForm = () => {
           <ButtonText>Próximo</ButtonText>
         </Button>
       </Box>
+      </ScrollView>
     </GluestackUIProvider>
   );
 };
